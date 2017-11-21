@@ -1,0 +1,504 @@
+html {
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  background: #1f1f1f;
+}
+a {
+  text-decoration: none;
+  color: #526488;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  min-height: 600px;
+  padding: 0 5px 0 5px;
+}
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 5px;
+  justify-content: space-between;
+  align-items: start;
+  margin-top: 10px;
+  padding: 0 15px 0 5px;
+}
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  width: 100vw;
+}
+.contact-form, .resume-container {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  width: 100vw;
+  padding: 5px;
+}
+.portfolio-container {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  padding: 0 15px 0 5px;
+}
+.portfolio-nav-items {
+  grid-row: 6/7;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+.project-body {
+  /* grid-row: 2/3; */
+  font-family: Quicksand-Regular;
+  font-size: 1rem;
+  color: #EEE;
+  margin-top: 10px; 
+}
+.project {
+  /* display: grid;
+  grid-gap: 2px;
+  grid-template-rows: 20px 1fr;
+  grid-template-columns: repeat(4, 1fr); */
+  background: #222;
+  border: 2px solid #222;
+  border-radius: 2px;
+  -webkit-transition: opacity 0.6s;
+  -moz-transition: opacity  0.6s;
+  transition: opacity 0.6s;
+  opacity: 0.6;
+}
+.project-image {
+  grid-row: 1/3;
+}
+.project:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+.project-title {
+  color: #45C1F9;
+  text-decoration-line: underline;
+  text-decoration-color: hsla(199, 94%, 62%,0.5);
+  font-weight: 300;
+  font-size: 2rem;
+  word-spacing: 5px;
+  line-height: 1rem;
+  margin: 5px 0 0 0;
+}
+.pivot-cards {
+  grid-row: 2/3;
+}
+.simon {
+  grid-row: 3/4;
+}
+.timer {
+  grid-row: 4/5;
+}
+.soundulator {
+  grid-row: 5/6;
+}
+header.name {
+  margin-bottom: 40px;
+}
+.title {
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  display: block;
+  font-weight: 300;
+  color: #526488;
+  font-size: 4.5rem;
+  line-height: 4rem;
+  margin: 0;
+}
+.subtitle {
+  color: #35495e;
+  font-weight: 300;
+  font-size: 4rem;
+  word-spacing: 5px;
+  margin-top: 0;
+  padding-left: 5px;
+  line-height: 4rem;
+}
+.bio {
+  font-family: Quicksand-Regular;
+  font-size: 1.25rem;
+  color: #8C8C8C;
+  letter-spacing: 0.75px;
+  }
+.button--blue {
+  position: relative;
+  background-color: #526488;
+  z-index: 1; 
+  border-radius: 2px;
+  border: none;
+  padding: 16px 20px;
+  margin-top: 8px;
+  font-family: Quicksand-Bold;
+  font-size: 1.3rem;
+  color: hsla(247, 38%, 91%, 0.5);
+  letter-spacing: 0.76px; 
+  transition: 0.6s ease;
+}
+.button--blue:hover {
+  background-color: #697B9E;
+  color: #FFF;
+  cursor: pointer;
+}
+.circle-arrow {
+  stroke-opacity: 0.5;
+  transition: 0.6s ease;
+}
+.button--blue:hover .circle-arrow {
+  stroke-opacity: 1;
+}
+
+svg.circle-arrow {
+  padding-top: 5px;
+}
+img.profile-pic {
+  display: none;
+}
+img.project-image{
+  display: none;
+}
+.nav-items {
+  color: #526488;
+  font-family: "Source Sans Pro";
+  font-size: 1rem;
+  padding: 60px 0 10px 0;
+}
+.nav-items span > a:hover, .portfolio-nav-items span > a:hover {
+  transition: color 0.6s ease;
+  cursor: pointer;
+  color: #45C1F9;
+}
+.resume-svg, .contact-svg {
+  width: 32px;
+  height: 32px;
+}
+svg.github, svg.linkedin, svg.twitter {
+  stroke: #526488;
+  fill: #1f1f1f;
+}
+svg.github:hover {
+  transition: 0.6s ease;
+  stroke: #1F1F1F;
+  fill: #9E9A98;
+}
+svg.linkedin:hover {
+  transition: 0.6s ease;
+  stroke: #1F1F1F;
+  fill: #9E9A98;
+}
+svg.twitter:hover {
+  transition: 0.6s ease;
+  stroke: #1F1F1F;
+  fill: #9E9A98;
+}
+
+.bio > p {
+  margin: 0;
+}
+.name {
+  grid-row: 1/2;
+}
+.bio {
+  grid-row: 2/3;
+}
+.nav-items {
+  grid-row: 3/4;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.about-nav-items {
+  flex: 0 0 50%;
+}
+input, textarea {
+  border: 0;
+  border-radius: 4px;
+  padding: 3px;
+  font-size: 2rem;
+  font-family: "HelveticaNeue-Medium", Helvetica, Arial, sans-serif;
+  color: #333;
+  background: #EEE;
+}
+input:focus {
+  outline: none;
+  border-color: #45C1F9;
+  box-shadow: 0 0 10px #45C1F9;
+  background: #FFF;
+}
+textarea {
+  -webkit-min-logical-height: 325px;
+}
+textarea:focus {
+  outline: none;
+  border-color: #45C1F9;
+  box-shadow: 0 0 10px #45C1F9;
+  background: #FFF;
+}
+label {
+  font-size: 1.75rem;
+  color: #526488;
+}
+.name-label {
+  grid-row: 1/2;
+}
+#name-form {
+  grid-row: 2/3;
+}
+
+.email-label {
+  grid-row: 3/4;
+}
+#email-form {
+  grid-row: 4/5;
+}
+.message-label {
+  grid-row: 6/7;
+}
+textarea{
+  grid-row: 7/9;
+}
+.contact-button {
+  grid-row: 9/10;
+}
+.page-title {
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  display: block;
+  font-weight: 300;
+  color: #526488;
+  font-size: 3rem;
+  line-height: 2rem;
+  margin-top: 20px;
+  grid-row: 1/2;
+}
+.resume-doc {
+  margin-top:60px;
+  padding-top: 20px;
+  grid-row: 2;
+  justify-self: center;
+}
+
+
+
+/* layout */
+@media only screen and (min-width: 720px) {
+  .about-container {
+    grid-template-columns: 10% 1fr 10%;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  .about, .portfolio, .resume, .contact, .socials{
+    flex: 0 0 20%;
+  }
+  
+  .contact-container {
+    grid-gap: 5px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15% 10% 70%;
+  }
+  .contact-form {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    align-content: center;
+  }
+  .contact-nav-items {
+    margin-left: 10%;
+  }
+  .resume-container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 10% 1fr 10%;
+    grid-template-rows: 15% 10% 70%;
+    justify-content: space-between;
+  }
+  .resume-doc {
+    grid-column: 2/3;
+  }
+  .portfolio-container {
+    display: grid;
+    grid-row-gap: 10px;
+    grid-template-columns: 10% 1fr 10%;
+    grid-template-rows: repeat(6, 1fr);
+    justify-content: space-between;
+  }
+  .nav-items {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    justify-content: space-between;
+    font-size: 1.5rem;
+  }
+  .portfolio-nav-items {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 0 10px 0;
+  }
+  .about, .portfolio, .resume, .contact {
+    flex: 0 0 25%;
+  }
+  .socials {
+    padding-top: 2px;
+    display: flex;
+    flex-flow: nowrap;
+  }
+  .name {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  header.name {
+    margin-bottom: 0;
+  }
+  .bio {
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+  img.profile-pic {
+    display: block;
+    float: left;
+  }
+  img.project-image {
+    display: block;
+  }
+  .nav-items svg {
+    margin-right: 10px;
+  }
+  .title {
+    text-align: left;
+  }
+  .page-title {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    text-align: center;
+  }
+  .subtitle {
+    text-align: left;
+    padding-left: 155px;
+  }
+  .name-label, #name-form, .email-label, #email-form, .message-label {
+    align-self: center;
+  }
+  .name-label {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    text-align: right;
+  }
+  #name-form {
+    grid-row: 1/2;
+    grid-column: 3/12;
+  }
+  .email-label {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    text-align: right;
+  }
+  #email-form {
+    grid-row: 2/3;
+    grid-column: 3/12;
+  }
+  .message-label {
+    grid-row: 3/4;
+    grid-column: 2/3;
+    text-align: right;
+  }
+  textarea{
+    grid-row: 3/4;
+    grid-column: 3/12;
+
+  }
+  .contact-button {
+    grid-row: 4/5;
+    grid-column: 3/6;
+    align-self: center;
+  }
+  .pivot-cards {
+    grid-row: 3/4;
+    grid-column: 2/3;
+    
+  }
+  .simon {
+    grid-row: 4/5;
+    grid-column: 2/3;
+    
+  }
+  .timer {
+    grid-row: 5/6;
+    grid-column: 2/3;
+    
+  }
+  .soundulator {
+    grid-row: 6/7;
+    grid-column: 2/3;
+    
+  }
+  .project {
+    display: grid;
+    grid-gap: 2px;
+    grid-template-rows: 20px 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    background: #222;
+    border: 2px solid #222;
+    border-radius: 2px;
+    -webkit-transition: opacity 0.6s;
+    -moz-transition: opacity  0.6s;
+    transition: opacity 0.6s;
+    opacity: 0.6;
+  }
+
+  /* .project > * {
+    opacity: 0.6;
+  } */
+  
+  .project-image {
+    grid-row: 1/3;
+    grid-column: 1/2;
+  }
+  .project:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+  .project-title {
+    grid-row: 1/2;
+    grid-column: 2/5;
+    color: #637599;
+    font-weight: 300;
+    font-size: 2rem;
+    word-spacing: 5px;
+    line-height: 1rem;
+    margin: 5px 0 0 0;
+    text-decoration-line: none;
+  }
+  .project-body {
+    grid-row: 2/3;
+    grid-column: 2/5;
+    font-family: Quicksand-Regular;
+    font-size: 1rem;
+    color: #EEE;
+    margin-top: 10px;
+  
+    
+  }
+}

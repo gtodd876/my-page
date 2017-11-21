@@ -1,0 +1,10 @@
+{
+  "name": "spa-me",
+  "version": "1.0.0",
+  "description": "personal website",
+  "main": "app.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
