@@ -66,7 +66,8 @@ a {
 }
 .project-body {
   /* grid-row: 2/3; */
-  font-family: Quicksand-Regular;
+  font-family: Quicksand, "Helvetica Neue", Helvetica ,sans-serif;
+  font-weight: 400;
   font-size: 1rem;
   color: #EEE;
   margin-top: 10px; 
@@ -135,7 +136,7 @@ header.name {
   line-height: 4rem;
 }
 .bio {
-  font-family: Quicksand-Regular;
+  font-family: Quicksand, "Helvetica Neue", Helvetica ,sans-serif;
   font-size: 1.25rem;
   color: #8C8C8C;
   letter-spacing: 0.75px;
@@ -148,8 +149,9 @@ header.name {
   border: none;
   padding: 16px 20px;
   margin-top: 8px;
-  font-family: Quicksand-Bold;
+  font-family: Quicksand, "Helvetica Neue", Helvetica ,sans-serif;
   font-size: 1.3rem;
+  font-weight: 700;
   color: hsla(247, 38%, 91%, 0.5);
   letter-spacing: 0.76px; 
   transition: 0.6s ease;
@@ -179,6 +181,7 @@ img.project-image{
 .nav-items {
   color: #526488;
   font-family: "Source Sans Pro";
+  font-weight: 300;
   font-size: 1rem;
   padding: 60px 0 10px 0;
 }
@@ -296,7 +299,12 @@ textarea{
   grid-row: 2;
   justify-self: center;
 }
+.project-body {
+  font-family: Quicksand, "Helvetica Neue", Helvetica ,sans-serif;
+  font-size: 1rem;
+  color: #EEE;
 
+}
 
 
 /* layout */
@@ -494,9 +502,6 @@ textarea{
   .project-body {
     grid-row: 2/3;
     grid-column: 2/5;
-    font-family: Quicksand-Regular;
-    font-size: 1rem;
-    color: #EEE;
     margin-top: 10px;
   
     
