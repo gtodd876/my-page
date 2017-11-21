@@ -12,6 +12,15 @@ app.use('/public', express.static(__dirname + '/public'));
 app.get('/', (req, res) => {
   res.sendFile('index.html', {root: __dirname});
 });
+app.get('/contact', (req, res) => {
+  res.sendFile('contact.html', {root: __dirname});
+});
+app.get('/resume', (req, res) => {
+  res.sendFile('resume.html', {root: __dirname});
+});
+app.get('/portfolio', (req, res) => {
+  res.sendFile('portfolio.html', {root: __dirname});
+});
 
 let pushDataInterval;
 
