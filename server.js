@@ -1,10 +1,10 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const WebSocketServer = require('ws').Server;
-const server = require('http').createServer();
-const exec = require('child_process').exec;
-const wss = new WebSocketServer({ server: server });
+// const WebSocketServer = require('ws').Server;
+// const server = require('http').createServer();
+// const exec = require('child_process').exec;
+// const wss = new WebSocketServer({ server: server });
 
 const PORT = 3001;
 
@@ -22,59 +22,59 @@ app.get('/portfolio', (req, res) => {
   res.sendFile('portfolio.html', {root: __dirname});
 });
 
-let pushDataInterval;
+app.listen(3001, () => console.log('Server listening at http://127.0.0.1:3001 !'))
 
-wss.on('connection', function connection(ws) {
-   console.log('clients connected: ', wss.clients.size);
+// let pushDataInterval;
 
-  if (!pushDataInterval) {
-    pushDataInterval = getServerLoad();
-  }
+// wss.on('connection', function connection(ws) {
+//    console.log('clients connected: ', wss.clients.size);
 
-  if (ws.readyState === ws.OPEN) {
-    ws.send('welcome!');
-  }
+//   if (!pushDataInterval) {
+//     pushDataInterval = getServerLoad();
+//   }
 
-  ws.on('close', function close() {
-    if (wss.clients.size === 0) {
-      clearInterval(pushDataInterval);
-      pushDataInterval = null;
-    }
-    console.log('disconnected');
-  });
+//   if (ws.readyState === ws.OPEN) {
+//     ws.send('welcome!');
+//   }
 
-  ws.on('error', function error() {
-    console.log('error');
-  });
-});
+//   ws.on('close', function close() {
+//     if (wss.clients.size === 0) {
+//       clearInterval(pushDataInterval);
+//       pushDataInterval = null;
+//     }
+//     console.log('disconnected');
+//   });
 
-/**
- * Run shell script on an interval and broadcast to connected clients.
- * @return {Object} The interval object
- */
-function getServerLoad() {
-  return setInterval(() => {
-    // Execute bash script
-    const loadScript = exec(`./proc.sh`);
+//   ws.on('error', function error() {
+//     console.log('error');
+//   });
+// });
 
-    loadScript.stdout.on('data', function(data) {
-      wss.broadcast(JSON.stringify({name: 'load', data}));
-    });
+// /**
+//  * Run shell script on an interval and broadcast to connected clients.
+//  * @return {Object} The interval object
+//  */
+// function getServerLoad() {
+//   return setInterval(() => {
+//     // Execute bash script
+//     const loadScript = exec(`./proc.sh`);
 
-  }, 2 * 1000);
-}
+//     loadScript.stdout.on('data', function(data) {
+//       wss.broadcast(JSON.stringify({name: 'load', data}));
+//     });
 
-/**
- * Broadcast data to all connected clients
- * @param  {Object} data
- * @void
- */
-wss.broadcast = function broadcast(data) {
-  console.log('Broadcasting: ', data);
-  wss.clients.forEach(function each(client) {
-    client.send(data);
-  });
-};
+//   }, 2 * 1000);
+// }
 
-server.on('request', app);
-server.listen(PORT, function () { console.log('Listening on ' + PORT); });
+// /**
+//  * Broadcast data to all connected clients
+//  * @param  {Object} data
+//  * @void
+//  */
+// wss.broadcast = function broadcast(data) {
+//   console.log('Broadcasting: ', data);
+//   wss.clients.forEach(function each(client) {
+//     client.send(data);
+//   });
+// };
+
