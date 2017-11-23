@@ -314,7 +314,9 @@ textarea{
 .resume-doc > p {
   padding-left: 1em;
 }
-
+.error-label {
+  color: rgb(156, 28, 28);
+}
 /* LARGER LAYOUT */
 /* ------------- */
 @media only screen and (min-width: 720px) {

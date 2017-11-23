@@ -2,13 +2,29 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const bodyParser = require('body-parser')
+const { check, validationResult } = require('express-validator/check');
+const { matchedData, sanitize } = require('express-validator/filter');
 const nodemailer = require('nodemailer');
 
 app.use(bodyParser.urlencoded({ extended: false }));
+
 // NODE MAILER
-app.post('/contact', (req, res) => {
-  console.log('It worked');
-  console.log(req.body);
+app.post('/contact', [
+  check('name').exists().withMessage('name required'),
+  check('name')
+    .isAlpha().withMessage('must be a name'),
+  check('email').exists().withMessage('email required'),
+  check('email')
+    .isEmail().withMessage('must be an email')
+    .trim()
+    .normalizeEmail(),
+  check('message').exists().withMessage('message required')
+  
+],(req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    res.sendFile('failure.html', {root: __dirname});
+  }
   let transporter = nodemailer.createTransport(
     {
       host: 'smtp.gmail.com',
