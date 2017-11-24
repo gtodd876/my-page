@@ -31,7 +31,7 @@
   #name-form {
     grid-row: 2/3;
   }
-  
+
   .email-label {
     grid-row: 3/4;
   }
@@ -54,7 +54,7 @@
     grid-template-rows: auto;
   }
   .portfolio-nav-items {
-    grid-row: 6/7;  
+    grid-row: 6/7;
   }
   .project-image {
     grid-row: 1/3;
@@ -74,11 +74,11 @@
   .resume-doc {
     grid-row: 2;
     justify-self: center;
-  } 
+  }
   .page-title {
     grid-row: 1/2;
   }
-} 
+}
 /* supports grid end */
 
 html {
@@ -147,7 +147,7 @@ header.name {
 .button--blue {
   position: relative;
   background-color: #526488;
-  z-index: 1; 
+  z-index: 1;
   border-radius: 2px;
   border: none;
   padding: 16px 20px;
@@ -156,7 +156,7 @@ header.name {
   font-size: 1.3rem;
   font-weight: 700;
   color: hsla(247, 38%, 91%, 0.5);
-  letter-spacing: 0.76px; 
+  letter-spacing: 0.76px;
   transition: 0.6s ease;
 }
 .button--blue:hover {
@@ -174,6 +174,11 @@ header.name {
 
 svg.circle-arrow {
   padding-top: 5px;
+}
+@supports not (display: grid) {
+  svg.circle-arrow {
+    display: none;
+  }
 }
 img.profile-pic {
   display: none;
@@ -298,17 +303,34 @@ label {
   margin: 0 15px 0 0 ;
   font-weight: 300;
 }
+.button--blue-view {
+  position: relative;
+  background-color: #526488;
+  z-index: 1;
+  border-radius: 2px;
+  border: none;
+  padding: 16px 20px;
+  margin-top: 8px;
+  font-family: Quicksand, "Helvetica Neue", Helvetica ,sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: hsla(247, 38%, 91%, 0.5);
+  letter-spacing: 0.76px;
+  transition: 0.6s ease;
+  width: 34vw;
+  visibility: visible;
+}
 @supports not (display: grid) {
   .portfolio-nav-items {
   margin: 20px 0 60px 0;
-  }    
+  }
 }
 .project-body {
   font-family: Quicksand, "Helvetica Neue", Helvetica ,sans-serif;
   font-weight: 400;
   font-size: 1rem;
   color: #EEE;
-  margin-top: 10px; 
+  margin-top: 10px;
 }
 .project {
   background: #222;
@@ -325,8 +347,6 @@ label {
 }
 .project-title {
   color: #45C1F9;
-  text-decoration-line: underline;
-  text-decoration-color: hsla(199, 94%, 62%,0.5);
   font-weight: 300;
   font-size: 2rem;
   word-spacing: 5px;
@@ -360,8 +380,9 @@ label {
 .error-label {
   color: rgb(156, 28, 28);
 }
-/* LARGER LAYOUT */
+/* LARGER LAYOUTS */
 /* ------------- */
+
 @media only screen and (min-width: 720px) {
   /* about page */
   @supports (display: grid) {
@@ -434,7 +455,7 @@ label {
       grid-row: 3/4;
       grid-column: 3/12;
       height: 4em;
-  
+
     }
     .contact-button {
       grid-row: 4/5;
@@ -480,22 +501,22 @@ label {
     .pivot-cards {
       grid-row: 3/4;
       grid-column: 2/3;
-      
+
     }
     .simon {
       grid-row: 4/5;
       grid-column: 2/3;
-      
+
     }
     .timer {
       grid-row: 5/6;
       grid-column: 2/3;
-      
+
     }
     .soundulator {
       grid-row: 6/7;
       grid-column: 2/3;
-      
+
     }
     .project {
       display: grid;
@@ -510,7 +531,7 @@ label {
       transition: opacity 0.6s;
       opacity: 0.6;
     }
-  
+
     .project-image {
       grid-row: 1/3;
       grid-column: 1/2;
@@ -522,6 +543,9 @@ label {
     .project-body {
       grid-row: 2/3;
       grid-column: 2/5;
+    }
+    .button--blue-view {
+      display: none;
     }
   } /*supports grid end */
 
@@ -539,7 +563,14 @@ label {
     img.project-image {
       padding-bottom: 5px;
     }
+    .button--blue-view {
+      visibility: visible;
+    }
+    .circle-arrow {
+      padding-top: 5px;
+    }
   }
+
   .nav-items svg {
     margin-right: 10px;
   }
@@ -573,8 +604,14 @@ label {
     line-height: 1rem;
     margin: 5px 0 0 0;
     text-decoration-line: none;
+    padding-left: 3px;
   }
   .project-body {
     margin-top: 10px;
+    padding-left: 5px;
+  }
+  object {
+    width: 100%;
+    height: 1000px;
   }
 }
